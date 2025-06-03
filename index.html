@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+</head>
+<body>
+    <p>welcome please login<p>
+
+
+        <form>
+            <labol for="usernameinput">username:</labol><input type="text" id="usernameinput"/><br/>
+            <labol for="passwordinput">password:</labol><input type="text" id="passwordinput"/>
+            <p id="message"></p>
+            <br></br>
+            <input type="button" value="login" onclick="verifyuser()"/>
+        </form>
+
+    <script>
+        function verifyuser(){
+            var username = document.getElementById("usernameinput").value;
+            var password = document.getElementById("passwordinput").value;
+            checkuser(username, password);
+        }
+
+        function checkuser(username, password){
+            var systemuser = "admin";
+            var systempassword = "123";
+            if (username === systemuser && password === systempassword) {
+                document.getElementById("message").innerHTML = "Login successful!";
+            } else {
+                document.getElementById("message").innerHTML = "Login failed. Please try again.";
+            }
+
+
+        }
+    </script>
+</body>
+</html>
